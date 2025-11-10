@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'], // <-- CRITICAL: Must include './src/**/*.{astro...}'
   theme: {
     extend: {
       colors: {
-        'primary-dark': '#3a3a3a', // A sophisticated dark gray from the logo's style
-        'accent': '#A0A0A0',      // A light, subtle accent gray
+        'primary-dark': '#3a3a3a', 
+        'accent': '#A0A0A0',      
       },
       fontFamily: {
-        'sans': ['Playfair Display', 'serif'], // Elegant font choice
+        'sans': ['Playfair Display', 'serif'], 
         'body': ['Inter', 'sans-serif'],
       },
       animation: {

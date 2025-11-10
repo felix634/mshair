@@ -34,26 +34,22 @@ const { title } = Astro.props;
 		<slot />
 
 		<script is:inline>
-			// Function to handle the intersection observer callback
+            // Intersection Observer script for scroll animation (AOS)
 			const observerCallback = (entries, observer) => {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
-						// Add the class to start the animation
 						entry.target.classList.add('aos-animate');
-						// Stop observing after the animation has been triggered once
 						observer.unobserve(entry.target);
 					}
 				});
 			};
 
-			// Create a new Intersection Observer instance
 			const observer = new IntersectionObserver(observerCallback, {
-				root: null, // viewport as the root
+				root: null, 
 				rootMargin: '0px',
-				threshold: 0.1 // Trigger when 10% of the element is visible
+				threshold: 0.1 
 			});
 
-			// Get all elements with the 'data-aos' attribute
 			document.querySelectorAll('[data-aos]').forEach(element => {
 				observer.observe(element);
 			});
